@@ -22,6 +22,24 @@ void push(int x)
     }
 }
 
+int peek(int Index)
+{
+    if (top == NULL)
+        return -1;
+    else
+    {
+        struct Node *t = top;
+
+        for (int i=0; t != NULL && i < Index-1; i++)
+            t = t->next;
+
+        if (t != NULL)
+            return t->data;
+        else
+            return -1;
+    }
+}
+
 int pop()
 {
     struct Node *t;
