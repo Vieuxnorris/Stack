@@ -59,11 +59,16 @@ int Stack::IsFull()
     return r;
 }
 
+int Stack::StackTop() {
+    if (top){
+        return top->data;
+    }
+    return -1;
+}
+
 int Stack::IsEmpty()
 {
-    if (top)
-        return top->data;
-    return -1;
+    return top ? 0:1;
 }
 
 int Stack::Peek(int index)
